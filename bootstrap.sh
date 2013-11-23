@@ -42,7 +42,7 @@ in_array() {
 #-----------------------------------------------------------------------------
 
 backupdir="$HOME/.dotfiles-backup/$(date "+%Y%m%d%H%M.%S")"
-excluded=(. .. .git .gitignore bootstrap.sh dependencies.sh Gemfile Gemfile.lock Rakefile README.md)
+excluded=(. .. .git .gitignore bootstrap.sh dependencies.sh Gemfile Gemfile.lock Rakefile README.md LICENSE-MIT.TXT)
 
 #-----------------------------------------------------------------------------
 # Install
