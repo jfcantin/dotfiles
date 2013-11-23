@@ -17,8 +17,15 @@ backup() {
 }
 
 installFiles() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+  local files=( $(ls -a) )
+  for file in "${files[@]}"; do
+    in_array $file "${excluded[@]}"
+    should_install=$?
+    if [ $should_install -gt 0 ]; then
+      [ -d "$HOME/$file" ] && rm -rf "$HOME/$file"
+      cp -Rf "$file" "$HOME/$file"
+    fi
+  done
 }
 
 in_array() {
