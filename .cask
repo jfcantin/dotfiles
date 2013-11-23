@@ -9,7 +9,6 @@ function installcask() {
 
 installcask dropbox
 installcask google-chrome
-installcask google-chrome-canary
 installcask iterm2
 installcask macvim
 installcask sublime-text
@@ -17,3 +16,9 @@ installcask the-unarchiver
 installcask tor-browser
 installcask virtualbox
 #installcask vlc
+
+# from caskroom/versions
+brew tap caskroom/versions
+installcask google-chrome-canary
+installcask rstudio-preview
+#installcask sublime-text-3
