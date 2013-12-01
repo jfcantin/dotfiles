@@ -1,10 +1,21 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
+# all of our bash files to be sourced
+config_files=(~/.dotfiles/**/*.bash)
+
+# load all bash files and source them
+for file in ${config_files}
+do
+  source $file
+done
+unset file
+unset config_files
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
