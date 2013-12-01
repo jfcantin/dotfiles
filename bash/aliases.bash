@@ -18,8 +18,9 @@ alias j="jobs"
 alias cl="clear"
 alias e="vim"
 alias ea="vim ~/.dotfiles/bash/aliases.bash; reload"
-alias ev="vim ~/.bash_profile; reload"
+alias ep="vim ~/.bash_profile; reload"
 alias eg="vim ~/.gitconfig"
+alias evu="vim ~/.dotfiles/vim/vim.symlink/vundle.vim"
 
 
 # Detect which `ls` flavor is in use
