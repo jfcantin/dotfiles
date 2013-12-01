@@ -76,3 +76,8 @@
 
 [push]
 	default = matching
+[user]
+	name = Jean-Francois Cantin
+	email = jfcantin@gmail.com
+[credential]
+	helper = osxkeychain
