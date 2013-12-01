@@ -24,20 +24,15 @@ chmod +x ~/code/z/z.sh
 
 # https://github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
-bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
+#bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
 # https://github.com/isaacs/nave
 # needs npm, obviously.
 # TODO: I think i'd rather curl down the nave.sh, symlink it into /bin and use that for initial node install.
-npm install -g nave
+#npm install -g nave
 
 
-
-# https://github.com/dronir/SpotifyControl
-# Spotify Controll Script
-cd ~/code
-git clone git://github.com/dronir/SpotifyControl.git
 
 # https://github.com/jeroenbegyn/VLCControl
 # VLC Controll Script
