@@ -14,7 +14,8 @@ user () { printf "\r  [ \033[0;33m?\033[0m ] $1 " }
 
 success () { printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n" }
 
-fail () { printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n" echo ''
+fail () { printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n" 
+	echo ''
   exit
 }
 
@@ -98,18 +99,16 @@ synchronize_repo
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.
-#if [ "$(uname -s)" == "Darwin" ]
-#then
-#  info "installing dependencies"
-#  if . bin/dot > /tmp/dotfiles-dot 2>&1
-#  then
-#    success "dependencies installed"
-#  else
-#    fail "error installing dependencies"
-#  fi
-#fi
+if [ "$(uname -s)" == "Darwin" ]
+then
+  info "installing dependencies"
+  #if . bin/dot > /tmp/dotfiles-dot 2>&1
+  #then
+  #  success "dependencies installed"
+  #else
+  #  fail "error installing dependencies"
+  #fi
+fi
 
 echo ''
 echo '  All installed!'
-
-info "Done"
