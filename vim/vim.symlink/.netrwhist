@@ -1,11 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/jfcantin/projects/spikes/ng-test01'
-let g:netrw_dirhist_2='/Users/jfcantin/projects/spikes/ng-test01/app'
-let g:netrw_dirhist_3='/Users/jfcantin/projects/spikes/ng-test01/app/scripts'
-let g:netrw_dirhist_4='/Users/jfcantin/projects/spikes/ng-test01/app'
-let g:netrw_dirhist_5='/Users/jfcantin/projects/spikes/ng-test01/app/scripts'
-let g:netrw_dirhist_6='/Users/jfcantin/.dotfiles'
-let g:netrw_dirhist_7='/Users/jfcantin/.dotfiles/bash'
-let g:netrw_dirhist_8='/Users/jfcantin/.dotfiles'
-let g:netrw_dirhist_9='/Users/jfcantin/.dotfiles/bash'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/jfcantin/.dotfiles'
+let g:netrw_dirhist_2='/Users/jfcantin/.dotfiles/vim'
+let g:netrw_dirhist_3='/Users/jfcantin/.dotfiles/vim/vim.symlink'
+let g:netrw_dirhist_4='/Users/jfcantin/.dotfiles/vim'
+let g:netrw_dirhist_5='/Users/jfcantin/.dotfiles/vim/vim.symlink'
