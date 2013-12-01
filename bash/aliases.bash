@@ -17,6 +17,8 @@ alias h="history"
 alias j="jobs"
 alias cl="clear"
 alias e="vim"
+alias ea="vim ~/.dotfiles/bash/aliases.bash && reload"
+alias ev="vim ~/.bash_profile && reload"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
