@@ -2,6 +2,8 @@
 #
 # bootstrap installs things.
 
+current_dir = pwd
+cd ~/.dotfiles
 DOTFILES_ROOT="`pwd`"
 
 set -e
@@ -105,5 +107,6 @@ install_dotfiles () {
 synchronize_repo
 install_dotfiles
 
+cd $current_dir
 echo ''
 echo '  All installed!'
