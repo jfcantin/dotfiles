@@ -1,73 +1,115 @@
 #!/usr/bin/env bash
+#
+# bootstrap installs things.
 
-#-----------------------------------------------------------------------------
-# Functions
-#-----------------------------------------------------------------------------
+DOTFILES_ROOT="`pwd`"
 
-# Notice title
-notice() { echo  "\033[1;32m=> $1\033[0m"; }
+set -e
 
-backup() {
-  mkdir -p $backupdir
+echo ''
 
-  local files=( $(ls -a) )
-  for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}" || cp -Rf "$HOME/$file" "$backupdir/$file"
-  done
+info () { printf "  [ \033[00;34m..\033[0m ] $1" }
+
+user () { printf "\r  [ \033[0;33m?\033[0m ] $1 " }
+
+success () { printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n" }
+
+fail () { printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n" echo ''
+  exit
 }
 
-installFiles() {
-  local files=( $(ls -a) )
-  for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}"
-    should_install=$?
-    if [ $should_install -gt 0 ]; then
-      [ -d "$HOME/$file" ] && rm -rf "$HOME/$file"
-      cp -Rf "$file" "$HOME/$file"
+link_files () {
+  ln -s $1 $2
+  success "linked $1 to $2"
+}
+
+synchronize_repo () {
+	git pull origin master
+}
+
+install_dotfiles () {
+  info 'installing dotfiles'
+
+  overwrite_all=false
+  backup_all=false
+  skip_all=false
+
+  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  do
+    dest="$HOME/.`basename \"${source%.*}\"`"
+
+    if [ -f $dest ] || [ -d $dest ]
+    then
+
+      overwrite=false
+      backup=false
+      skip=false
+
+      if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
+      then
+        user "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        read -n 1 action
+
+        case "$action" in
+          o )
+            overwrite=true;;
+          O )
+            overwrite_all=true;;
+          b )
+            backup=true;;
+          B )
+            backup_all=true;;
+          s )
+            skip=true;;
+          S )
+            skip_all=true;;
+          * )
+            ;;
+        esac
+      fi
+
+      if [ "$overwrite" == "true" ] || [ "$overwrite_all" == "true" ]
+      then
+        rm -rf $dest
+        success "removed $dest"
+      fi
+
+      if [ "$backup" == "true" ] || [ "$backup_all" == "true" ]
+      then
+        mv $dest $dest\.backup
+        success "moved $dest to $dest.backup"
+      fi
+
+      if [ "$skip" == "false" ] && [ "$skip_all" == "false" ]
+      then
+        link_files $source $dest
+      else
+        success "skipped $source"
+      fi
+
+    else
+      link_files $source $dest
     fi
+
   done
 }
 
-in_array() {
-  local hay needle=$1
-  shift
-  for hay; do
-    [[ $hay == $needle ]] && return 0
-  done
-  return 1
-}
+synchronize_repo
+install_dotfiles
 
-#-----------------------------------------------------------------------------
-# Initialize
-#-----------------------------------------------------------------------------
+# If we're on a Mac, let's install and setup homebrew.
+#if [ "$(uname -s)" == "Darwin" ]
+#then
+#  info "installing dependencies"
+#  if . bin/dot > /tmp/dotfiles-dot 2>&1
+#  then
+#    success "dependencies installed"
+#  else
+#    fail "error installing dependencies"
+#  fi
+#fi
 
-backupdir="$HOME/.dotfiles-backup/$(date "+%Y%m%d%H%M.%S")"
-excluded=(. .. .git .gitignore bootstrap.sh dependencies.sh Gemfile Gemfile.lock Rakefile README.md LICENSE-MIT.TXT)
+echo ''
+echo '  All installed!'
 
-#-----------------------------------------------------------------------------
-# Install
-#-----------------------------------------------------------------------------
-cd "$(dirname "${BASH_SOURCE}")"
-git pull origin master
-
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-  notice "Backup up old files ($backupdir)"
-  backup
-
-	notice "Installing files in home directory"
-	installFiles
-else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-  notice "Backup up old files ($backupdir)"
-  backup
-
-	notice "Installing files in home directory"
-	installFiles
-	fi
-fi
-source ~/.bash_profile
-
-notice "Done"
-exec $SHELL -l
+info "Done"
