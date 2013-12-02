@@ -40,6 +40,7 @@ Bundle "tpope/vim-fugitive"
 
 " General text editing improvements...
 "Bundle "skwp/vim-easymotion"
+Bundle "msanders/snipmate.vim.git"
 
 " General vim improvements
 Bundle "kien/ctrlp.vim"
