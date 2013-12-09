@@ -18,6 +18,8 @@ installcask sublime-text
 installcask the-unarchiver
 installcask tor-browser
 installcask virtualbox
+installcask vagrant
+
 #installcask vlc
 
 # from caskroom/versions
