@@ -48,6 +48,8 @@ Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/nerdtree.git"
 Bundle "scrooloose/syntastic.git"
 Bundle "tpope/vim-surround.git"
+Bundle "jcfaria/Vim-R-plugin.git"
+Bundle "jalvesaq/VimCom.git"
 
 "vim-misc is required for vim-session
 "Bundle "xolox/vim-misc"
