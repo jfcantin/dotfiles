@@ -22,6 +22,8 @@ alias ea="vim ~/.dotfiles/bash/aliases.bash; reload"
 alias ep="vim ~/.bash_profile; reload"
 alias eg="vim ~/.gitconfig"
 alias evu="vim ~/.dotfiles/vim/vim.symlink/vundle.vim"
+ 
+alias ylbm="yo loopback:model"
 
 
 # Detect which `ls` flavor is in use
@@ -32,13 +34,13 @@ else # OS X `ls`
 fi
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -lhF ${colorflag}"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -lhaF ${colorflag}"
 
 # List only directories
-alias lsd='ls -lF ${colorflag} | grep "^d"'
+alias lsd='ls -lhF ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
