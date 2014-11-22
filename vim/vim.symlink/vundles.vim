@@ -50,6 +50,7 @@ Bundle "scrooloose/syntastic.git"
 Bundle "tpope/vim-surround.git"
 Bundle "jcfaria/Vim-R-plugin.git"
 Bundle "jalvesaq/VimCom.git"
+Bundle "ervandew/screen"
 
 "vim-misc is required for vim-session
 "Bundle "xolox/vim-misc"

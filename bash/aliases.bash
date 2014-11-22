@@ -21,7 +21,8 @@ alias e="vim"
 alias ea="vim ~/.dotfiles/bash/aliases.bash; reload"
 alias ep="vim ~/.bash_profile; reload"
 alias eg="vim ~/.gitconfig"
-alias evu="vim ~/.dotfiles/vim/vim.symlink/vundle.vim"
+alias evrc="vim ~/.dotfiles/vim/vimrc.symlink; reload"
+alias evu="vim ~/.dotfiles/vim/vim.symlink/vundles.vim; reload"
  
 alias ylbm="yo loopback:model"
 

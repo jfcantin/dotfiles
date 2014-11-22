@@ -126,6 +126,9 @@ endif
 vmap <Space> <Plug>RDSendSelection
 nmap <Space> <Plug>RDSendLine
 
+let vimrplugin_applescript = 0
+let vimrplugin_screenplugin = 0
+
 " Force Vim to use 256 colors if running in a capable terminal emulator:
 if &term =~ "xterm" || &term =~ "256" || $DISPLAY != "" || $HAS_256_COLORS == "yes"
     set t_Co=256
