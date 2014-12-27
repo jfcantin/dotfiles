@@ -19,8 +19,8 @@ brew install wget --enable-iri
 
 
 # Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
+#brew tap homebrew/dupes
+#brew install homebrew/dupes/grep
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
@@ -28,11 +28,16 @@ brew install homebrew/dupes/grep
 
 # Install other useful binaries
 brew install ack
-#brew install git
+brew install autojump
+brew install boot2docker
+brew install git
 brew install node
 #brew install pigz
 brew install rename
+brew install pandoc
+brew install vim
 brew install tree
+brew install tmux
 
 # Remove outdated versions from the cellar
 brew cleanup

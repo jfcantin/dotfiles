@@ -52,7 +52,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:▸\ ,trail:·,nbsp:_
 set list
 " Highlight searches
 set hlsearch
@@ -140,4 +141,6 @@ endif
 " preferred color scheme, then, remove the double quote (which is a comment
 " character, like the # is for R language) and replace the value "not_defined"
 " below:
-"colorscheme not_defined
+
+"set background=light
+"colorscheme solarized

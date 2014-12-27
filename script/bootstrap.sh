@@ -104,7 +104,7 @@ install_dotfiles () {
   done
 }
 
-synchronize_repo
+#synchronize_repo
 install_dotfiles
 
 cd $current_dir
