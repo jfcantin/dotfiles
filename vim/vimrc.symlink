@@ -100,7 +100,7 @@ noremap <leader>ss :call StripWhitespace()<CR>
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " ctrl-p configuration
-  let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|.(git|hg|svn))$'
+  let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|.(git|hg|svn)|_build|deps)$'
 
 " Automatic commands
 if has("autocmd")
@@ -112,23 +112,47 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
 
-" Lines added by the Vim-R-plugin command :RpluginConfig (2014-Jun-28 12:25):
-filetype plugin on
-filetype indent on
-" Change the <LocalLeader> key:
-let maplocalleader = ","
-" Use Ctrl+Space to do omnicompletion:
-if has("gui_running")
-    inoremap <C-Space> <C-x><C-o>
-else
-    inoremap <Nul> <C-x><C-o>
-endif
-" Press the space bar to send lines (in Normal mode) and selections to R:
-vmap <Space> <Plug>RDSendSelection
-nmap <Space> <Plug>RDSendLine
+"VIM Airline
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+"if !exists('g:airline_symbols')
+"let g:airline_symbols = {}
+"endif
+"" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
-let vimrplugin_applescript = 0
-let vimrplugin_screenplugin = 0
+" Elixir
+"run tests right from vim - super helpful
+map <leader><space> :!mix test<CR>
+
+" Lines added by the Vim-R-plugin command :RpluginConfig (2014-Jun-28 12:25):
+"filetype plugin on
+"filetype indent on
+"" Change the <LocalLeader> key:
+"let maplocalleader = ","
+"" Use Ctrl+Space to do omnicompletion:
+"if has("gui_running")
+"    inoremap <C-Space> <C-x><C-o>
+"else
+"    inoremap <Nul> <C-x><C-o>
+"endif
+"" Press the space bar to send lines (in Normal mode) and selections to R:
+"vmap <Space> <Plug>RDSendSelection
+"nmap <Space> <Plug>RDSendLine
+"
+"let vimrplugin_applescript = 0
+"let vimrplugin_screenplugin = 0
 
 " Force Vim to use 256 colors if running in a capable terminal emulator:
 if &term =~ "xterm" || &term =~ "256" || $DISPLAY != "" || $HAS_256_COLORS == "yes"

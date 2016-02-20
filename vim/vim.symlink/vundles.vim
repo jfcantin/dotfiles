@@ -24,6 +24,7 @@ Bundle "gmarik/vundle"
 "Bundle "vim-ruby/vim-ruby.git"
 
 " Other languages
+Bundle "elixir-lang/vim-elixir"
 "Bundle "pangloss/vim-javascript"
 "Bundle 'edsono/vim-dbext'
 Bundle "vim-pandoc/vim-pandoc"
@@ -39,6 +40,8 @@ Bundle "vim-pandoc/vim-pandoc-syntax"
 
 " Git related...
 Bundle "tpope/vim-fugitive"
+Bundle "vim-airline/vim-airline"
+Bundle "vim-airline/vim-airline-themes"
 
 " General text editing improvements...
 "Bundle "skwp/vim-easymotion"
@@ -50,9 +53,9 @@ Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/nerdtree.git"
 Bundle "scrooloose/syntastic.git"
 Bundle "tpope/vim-surround.git"
-Bundle "tpope/vim-dispatch.git"
-Bundle "jcfaria/Vim-R-plugin.git"
-Bundle "jalvesaq/VimCom.git"
+"Bundle "tpope/vim-dispatch.git"
+"Bundle "jcfaria/Vim-R-plugin.git"
+"Bundle "jalvesaq/VimCom.git"
 Bundle "ervandew/screen"
 
 "vim-misc is required for vim-session
@@ -64,7 +67,7 @@ Bundle "skwp/vim-colors-solarized"
 Bundle 'tpope/vim-vividchalk'
 
 " Omnisharp
-Bundle "OmniSharp/omnisharp-vim"
+" Bundle "OmniSharp/omnisharp-vim"
 
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on
