@@ -1,5 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # load all bash files and source them
 for file in ~/.dotfiles/bash/*.bash
@@ -62,3 +63,5 @@ export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
 export DOCKER_CERT_PATH="/Users/jfcantin/.docker/machine/machines/default"
 export DOCKER_MACHINE_NAME="default"
+
+[ -s "/Users/jfcantin/.dnx/dnvm/dnvm.sh" ] && . "/Users/jfcantin/.dnx/dnvm/dnvm.sh" # Load dnvm

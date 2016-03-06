@@ -26,7 +26,7 @@ Bundle "gmarik/vundle"
 " Other languages
 Bundle "elixir-lang/vim-elixir"
 "Bundle "pangloss/vim-javascript"
-"Bundle 'edsono/vim-dbext'
+"Bundle "edsono/vim-dbext"
 Bundle "vim-pandoc/vim-pandoc"
 Bundle "vim-pandoc/vim-pandoc-syntax"
 
@@ -46,6 +46,7 @@ Bundle "vim-airline/vim-airline-themes"
 " General text editing improvements...
 "Bundle "skwp/vim-easymotion"
 Bundle "msanders/snipmate.vim.git"
+Bundle "rbonvall/snipmate-snippets-bib"
 
 " General vim improvements
 Bundle "kien/ctrlp.vim"
@@ -53,18 +54,15 @@ Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/nerdtree.git"
 Bundle "scrooloose/syntastic.git"
 Bundle "tpope/vim-surround.git"
-"Bundle "tpope/vim-dispatch.git"
-"Bundle "jcfaria/Vim-R-plugin.git"
-"Bundle "jalvesaq/VimCom.git"
-Bundle "ervandew/screen"
+"Bundle "ervandew/screen"
 
 "vim-misc is required for vim-session
 "Bundle "xolox/vim-misc"
 "Bundle "xolox/vim-session"
 
 " Cosmetics, color scheme, Powerline...
-Bundle "skwp/vim-colors-solarized"
-Bundle 'tpope/vim-vividchalk'
+"Bundle "skwp/vim-colors-solarized"
+"Bundle 'tpope/vim-vividchalk'
 
 " Omnisharp
 " Bundle "OmniSharp/omnisharp-vim"
