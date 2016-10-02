@@ -118,6 +118,13 @@ if has("autocmd")
   filetype on
   " Treat .json files as .js
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+
+  " file-tyep definition for RUN, REPL, DEBUG
+  autocmd BufNewFile,BufRead *.m let b:comp = ["octave", "octave -i", "octave"]
+  autocmd BufNewFile,BufRead *.py let b:comp = ["python", "python", "python -m pdb"]
+  nmap <Leader>r :exec "!" b:comp[0] " %"<CR>
+  nmap <Leader>i :exec "!" b:comp[1]<CR>
+  nmap <Leader>d :exec "!" b:comp[2] " %"<CR>
 endif
 
 "VIM Airline

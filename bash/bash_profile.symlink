@@ -58,10 +58,46 @@ source kvm.sh
 # Tab completion for brew
 # source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
-# Docker
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/jfcantin/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
-
 [ -s "/Users/jfcantin/.dnx/dnvm/dnvm.sh" ] && . "/Users/jfcantin/.dnx/dnvm/dnvm.sh" # Load dnvm
+
+#docker 
+function cleandocker {
+  EXITED=$(docker ps -q -f status=exited)
+  DANGLING=$(docker images -q -f "dangling=true")
+
+  if [ "$1" == "--dry-run" ]; then
+    echo "==> Would stop containers:"
+    echo $EXITED
+    echo "==> And images:"
+    echo $DANGLING
+  else
+    if [ -n "$EXITED" ]; then
+      docker rm $EXITED
+    else
+      echo "No containers to remove."
+    fi
+    if [ -n "$DANGLING" ]; then
+      docker rmi $DANGLING
+    else
+      echo "No images to remove."
+    fi
+  fi
+}
+
+# docker python
+dpython(){
+  #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook python "$@"
+  docker start dato
+  docker exec -it dato python "$@"
+}
+dipython() {
+  #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook ipython
+  docker start dato
+  docker exec -it dato ipython
+}
+djupyter() {
+  (sleep 3 && open "http://localhost:8888")&
+  #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jupyter/scipy-notebook jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
+  #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jf/scipy-notebook
+  docker start dato
+}
