@@ -1,4 +1,10 @@
 " Make Vim more useful
+
+" =============== Vundle Initialization ===============
+" This loads all the plugins specified in ~/.vim/vundle.vim
+" Use Vundle plugin to manage all other plugins
+source ~/.vim/vundles.vim
+
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -30,12 +36,6 @@ endif
 " Save before switching buffer and exiting
 set autowriteall
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundle.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
-endif
 
 " Respect modeline in files
 set modeline

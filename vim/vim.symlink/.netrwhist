@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/jfcantin/projects/spikes/dotfiles/bundle'
 let g:netrw_dirhist_2='/Users/jfcantin/projects/spikes/dotfiles/bundle/vundle'
 let g:netrw_dirhist_3='/Users/jfcantin/projects/spikes/dotfiles/bundle'
 let g:netrw_dirhist_4='/Users/jfcantin/projects/spikes/dotfiles'
+let g:netrw_dirhist_5='/Users/jfcantin/.dotfiles/vim'
+let g:netrw_dirhist_6='/Users/jfcantin/.dotfiles/vim/vim.symlink'
