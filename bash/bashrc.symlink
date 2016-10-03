@@ -30,3 +30,5 @@ else
         function tvim(){ tmux new-session "vim $@" ; }
     fi
 fi
+
+`brew --prefix`/etc/profile.d/z.sh
