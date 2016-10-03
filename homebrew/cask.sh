@@ -24,3 +24,5 @@ brew cask install macvim
 #installcask google-chrome-canary
 #installcask rstudio-preview
 #installcask sublime-text-3
+
+brew cask cleanup

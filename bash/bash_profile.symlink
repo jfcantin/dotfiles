@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:`$(brew --prefix coreutils)/libexec/gnubin`:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # load all bash files and source them
@@ -50,54 +50,54 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # Add autojump
 # [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+#[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # aspnet kvm
-source kvm.sh
+#source kvm.sh
+#[ -s "/Users/jfcantin/.dnx/dnvm/dnvm.sh" ] && . "/Users/jfcantin/.dnx/dnvm/dnvm.sh" # Load dnvm
 
 # Tab completion for brew
 # source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 
-[ -s "/Users/jfcantin/.dnx/dnvm/dnvm.sh" ] && . "/Users/jfcantin/.dnx/dnvm/dnvm.sh" # Load dnvm
 
 #docker 
-function cleandocker {
-  EXITED=$(docker ps -q -f status=exited)
-  DANGLING=$(docker images -q -f "dangling=true")
-
-  if [ "$1" == "--dry-run" ]; then
-    echo "==> Would stop containers:"
-    echo $EXITED
-    echo "==> And images:"
-    echo $DANGLING
-  else
-    if [ -n "$EXITED" ]; then
-      docker rm $EXITED
-    else
-      echo "No containers to remove."
-    fi
-    if [ -n "$DANGLING" ]; then
-      docker rmi $DANGLING
-    else
-      echo "No images to remove."
-    fi
-  fi
-}
-
-# docker python
-dpython(){
-  #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook python "$@"
-  docker start dato
-  docker exec -it dato python "$@"
-}
-dipython() {
-  #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook ipython
-  docker start dato
-  docker exec -it dato ipython
-}
-djupyter() {
-  (sleep 3 && open "http://localhost:8888")&
-  #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jupyter/scipy-notebook jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
-  #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jf/scipy-notebook
-  docker start dato
-}
+# function cleandocker {
+#   EXITED=$(docker ps -q -f status=exited)
+#   DANGLING=$(docker images -q -f "dangling=true")
+# 
+#   if [ "$1" == "--dry-run" ]; then
+#     echo "==> Would stop containers:"
+#     echo $EXITED
+#     echo "==> And images:"
+#     echo $DANGLING
+#   else
+#     if [ -n "$EXITED" ]; then
+#       docker rm $EXITED
+#     else
+#       echo "No containers to remove."
+#     fi
+#     if [ -n "$DANGLING" ]; then
+#       docker rmi $DANGLING
+#     else
+#       echo "No images to remove."
+#     fi
+#   fi
+# }
+# 
+# # docker python
+# dpython(){
+#   #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook python "$@"
+#   docker start dato
+#   docker exec -it dato python "$@"
+# }
+# dipython() {
+#   #docker run -v $PWD:/home/jovyan/work --rm -it jf/scipy-notebook ipython
+#   docker start dato
+#   docker exec -it dato ipython
+# }
+# djupyter() {
+#   (sleep 3 && open "http://localhost:8888")&
+#   #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jupyter/scipy-notebook jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
+#   #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jf/scipy-notebook
+#   docker start dato
+# }
