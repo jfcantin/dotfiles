@@ -24,11 +24,11 @@ Bundle "gmarik/vundle"
 "Bundle "vim-ruby/vim-ruby.git"
 
 " Other languages
-Bundle "elixir-lang/vim-elixir"
+"Bundle "elixir-lang/vim-elixir"
 "Bundle "pangloss/vim-javascript"
 "Bundle "edsono/vim-dbext"
-Bundle "vim-pandoc/vim-pandoc"
-Bundle "vim-pandoc/vim-pandoc-syntax"
+"Bundle "vim-pandoc/vim-pandoc"
+"Bundle "vim-pandoc/vim-pandoc-syntax"
 
 " Html, Xml, Css, Markdown...
 "Bundle "claco/jasmine.vim"
@@ -39,21 +39,21 @@ Bundle "vim-pandoc/vim-pandoc-syntax"
 "Bundle "wavded/vim-stylus"
 
 " Git related...
-Bundle "tpope/vim-fugitive"
-Bundle "vim-airline/vim-airline"
-Bundle "vim-airline/vim-airline-themes"
+"Bundle "tpope/vim-fugitive"
+"Bundle "vim-airline/vim-airline"
+"Bundle "vim-airline/vim-airline-themes"
 
 " General text editing improvements...
 "Bundle "skwp/vim-easymotion"
-Bundle "msanders/snipmate.vim.git"
-Bundle "rbonvall/snipmate-snippets-bib"
+"Bundle "msanders/snipmate.vim.git"
+"Bundle "rbonvall/snipmate-snippets-bib"
 
 " General vim improvements
-Bundle "kien/ctrlp.vim"
+"Bundle "kien/ctrlp.vim"
 "Bundle "mattn/webapi-vim.git"
-Bundle "scrooloose/nerdtree.git"
-Bundle "scrooloose/syntastic.git"
-Bundle "tpope/vim-surround.git"
+"Bundle "scrooloose/nerdtree.git"
+"Bundle "scrooloose/syntastic.git"
+"Bundle "tpope/vim-surround.git"
 "Bundle "ervandew/screen"
 
 "vim-misc is required for vim-session
