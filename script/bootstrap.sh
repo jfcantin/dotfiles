@@ -3,7 +3,8 @@
 # bootstrap installs things.
 
 current_dir = pwd
-cd ~/.dotfiles
+cd "$(dirname "${BASH_SOURCE}")";
+cd ..; # go up one to be at the root 
 DOTFILES_ROOT="`pwd`"
 
 set -e
