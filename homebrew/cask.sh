@@ -11,6 +11,7 @@ brew cask install dropbox
 brew cask install google-chrome-canary
 #brew cask install iterm2
 brew cask install macvim
+brew cask install spectacle
 #installcask sublime-text
 #installcask the-unarchiver
 #installcask tor-browser
