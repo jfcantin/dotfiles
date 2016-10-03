@@ -5,9 +5,10 @@
   echo "do not run this script in one go. hit ctrl-c NOW"
   read -n 1
 
+# backup itunes folder to external
+# backup pictures folder to external
 
 #  backup old machine's key items
-
 mkdir -p ~/migration/home
 cd ~/migration
 
