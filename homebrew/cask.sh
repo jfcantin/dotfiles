@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Install native apps
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 
 function installcask() {
 	brew cask install "${@}" 2> /dev/null
 }
 
-# installcask lastpass-universal #commented since it was installed manually
-installcask dropbox
-installcask google-chrome
-installcask iterm2
-installcask macvim
+
+brew cask install dropbox 
+brew cask install google-chrome-canary
+#brew cask install iterm2
+brew cask install macvim
 #installcask sublime-text
 #installcask the-unarchiver
 #installcask tor-browser
