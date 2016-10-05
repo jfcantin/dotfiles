@@ -23,6 +23,7 @@ npm list -g --depth=0 	> npm-g-list.txt
 
 # let's hold on to these
 
+cp ~/.Renviron ~/migration/home
 cp ~/.extra ~/migration/home
 cp ~/.z ~/migration/home
 

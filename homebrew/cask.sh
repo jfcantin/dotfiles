@@ -6,6 +6,7 @@ brew cask install dropbox
 brew cask install iterm2
 brew cask install macvim
 brew cask install spectacle
+brew cask install docker
 
 brew tap caskroom/versions
 brew cask install google-chrome-canary
