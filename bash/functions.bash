@@ -252,16 +252,6 @@ function gi() {
 	eval npm install --save-dev grunt-{"$*"}
 }
 
-# `m` with no arguments opens the current directory in TextMate, otherwise
-# opens the given location
-function m() {
-	if [ $# -eq 0 ]; then
-		mate .
-	else
-		mate "$@"
-	fi
-}
-
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
 function s() {
@@ -311,3 +301,9 @@ function np() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
+
+# Docker management
+# on remote host run the following: (http://www.akitaonrails.com/2016/08/03/moving-to-gitlab-yes-it-s-worth-it)
+# https://help.ubuntu.com/lts/serverguide/automatic-updates.html
+# sudo dpkg-reconfigure --priority=low unattended-upgrades
+# sudo apt-get update && sudo apt-get upgrade
