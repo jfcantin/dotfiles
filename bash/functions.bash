@@ -307,3 +307,6 @@ function tre() {
 # https://help.ubuntu.com/lts/serverguide/automatic-updates.html
 # sudo dpkg-reconfigure --priority=low unattended-upgrades
 # sudo apt-get update && sudo apt-get upgrade
+function do-dmcreate() {
+  docker-machine create --driver digitalocean "$@"
+}
