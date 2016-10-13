@@ -17,6 +17,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " All your bundles here
+"
+" Git related...
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Ruby, Rails, Rake...
 "Bundle "tpope/vim-rails.git"
@@ -24,9 +29,9 @@ Plugin 'VundleVim/Vundle.vim'
 "Bundle "vim-ruby/vim-ruby.git"
 
 " Other languages
-"Bundle "elixir-lang/vim-elixir"
+Plugin 'elixir-lang/vim-elixir'
 "Bundle "pangloss/vim-javascript"
-"Bundle "edsono/vim-dbext"
+Plugin 'edsono/vim-dbext'
 "Bundle "vim-pandoc/vim-pandoc"
 "Bundle "vim-pandoc/vim-pandoc-syntax"
 
@@ -38,20 +43,15 @@ Plugin 'VundleVim/Vundle.vim'
 "Bundle "skwp/vim-html-escape"
 "Bundle "wavded/vim-stylus"
 
-" Git related...
-"Bundle "tpope/vim-fugitive"
-"Bundle "vim-airline/vim-airline"
-"Bundle "vim-airline/vim-airline-themes"
-
 " General text editing improvements...
 "Bundle "skwp/vim-easymotion"
 "Bundle "msanders/snipmate.vim.git"
 "Bundle "rbonvall/snipmate-snippets-bib"
 
 " General vim improvements
-"Bundle "kien/ctrlp.vim"
+Plugin 'kien/ctrlp.vim'
 "Bundle "mattn/webapi-vim.git"
-"Bundle "scrooloose/nerdtree.git"
+Plugin 'scrooloose/nerdtree.git'
 "Bundle "scrooloose/syntastic.git"
 "Bundle "tpope/vim-surround.git"
 "Bundle "ervandew/screen"
