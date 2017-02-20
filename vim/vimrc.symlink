@@ -152,7 +152,7 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 set showcmd
-set shell=/bin/sh
+set shell=/bin/bash
 
 " session management
 let g:session_directory = "~/./session"
