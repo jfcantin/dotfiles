@@ -534,6 +534,8 @@ augroup go
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
+  au FileType go set autowrite
+
 augroup END
 
 
