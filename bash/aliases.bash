@@ -7,7 +7,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias od="cd ~/OneDrive"
@@ -23,8 +22,10 @@ alias ebrc="vim ~/.bashrc; reload"
 alias eg="vim ~/.gitconfig"
 alias evrc="vim ~/.dotfiles/vim/vimrc.symlink; reload"
 alias evu="vim ~/.dotfiles/vim/vim.symlink/vundles.vim; reload"
- 
+
 alias ylbm="yo loopback:model"
+
+alias t="task"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -164,4 +165,7 @@ alias reload="exec $SHELL -l"
 alias dm="docker-machine"
 alias dm-env="env | grep DOCKER_"
 alias dm-list="docker-machine ls"
-
+alias d="docker"
+alias dc-up="docker-compose up"
+alias dc-upd="docker-compose up -d"
+alias dc-stop="docker-compose stop"

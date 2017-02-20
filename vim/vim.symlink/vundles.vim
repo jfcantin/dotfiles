@@ -29,9 +29,10 @@ Plugin 'vim-airline/vim-airline-themes'
 "Bundle "vim-ruby/vim-ruby.git"
 
 " Other languages
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/dbext.vim'
+"Plugin 'elixir-lang/vim-elixir'
 "Bundle "pangloss/vim-javascript"
-Plugin 'edsono/vim-dbext'
 "Bundle "vim-pandoc/vim-pandoc"
 "Bundle "vim-pandoc/vim-pandoc-syntax"
 
@@ -49,11 +50,12 @@ Plugin 'edsono/vim-dbext'
 "Bundle "rbonvall/snipmate-snippets-bib"
 
 " General vim improvements
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Bundle "mattn/webapi-vim.git"
 Plugin 'scrooloose/nerdtree.git'
-"Bundle "scrooloose/syntastic.git"
-"Bundle "tpope/vim-surround.git"
+Plugin 'scrooloose/syntastic.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'Shougo/neocomplete.vim'
 "Bundle "ervandew/screen"
 
 "vim-misc is required for vim-session

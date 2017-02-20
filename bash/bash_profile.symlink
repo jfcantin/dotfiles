@@ -100,9 +100,18 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 #   docker start dato
 #   docker exec -it dato ipython
 # }
-# djupyter() {
-#   (sleep 3 && open "http://localhost:8888")&
-#   #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jupyter/scipy-notebook jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
-#   #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jf/scipy-notebook
-#   docker start dato
-# }
+
+djupyter() {
+  (sleep 3 && open "http://localhost:8888")&
+  #   #docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jupyter/scipy-notebook jupyter notebook --no-browser --ip="\*" --notebook-dir=/tmp/working
+  # docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jfcantin/scipy-notebook:0.1
+  # docker run -v $PWD:/home/jovyan/work -p 8888:8888 --rm -it jfcantin/scipy-notebook:0.1
+  docker start dato
+}
+ljupyter() {
+  ~/anaconda3/bin/jupyter notebook
+}
+
+jlab() {
+  ~/anaconda3/bin/jupyter lab
+}

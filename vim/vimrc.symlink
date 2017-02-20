@@ -22,9 +22,12 @@ set gdefault
 set encoding=utf-8 nobomb
 " Change mapleader
 let mapleader=","
+let g:mapleader=","
+
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
+
 " Centralize backups, swapfiles and undo history
 set noswapfile
 set nobackup
@@ -41,6 +44,7 @@ set autowriteall
 set modeline
 set modelines=4
 " Enable per-directory .vimrc files and disable unsafe commands in them
+
 set exrc
 set secure
 " Enable line numbers
@@ -54,6 +58,7 @@ set autoindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set nowrap
 " Show “invisible” characters
 " set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set lcs=tab:▸\ ,trail:·,nbsp:_
@@ -98,17 +103,42 @@ function! StripWhitespace()
   call setpos('.', save_cursor)
   call setreg('/', old_query)
 endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" ctrl-p configuration
-  let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|.(git|hg|svn)|_build|deps)$'
-  let g:ctrlp_user_command = [
-      \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
-      \ 'find %s -type f'
-      \ ]
-"  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -co --exclude-standard']
+noremap <Leader>ss :call StripWhitespace()<CR>
+
+" Save a file as root (,W)
+noremap <Leader>W :w !sudo tee % > /dev/null<CR>
+
+map <Leader>w :w<CR>
+imap <Leader>w <ESC>:w<CR>
+vmap <Leader>w <ESC><ESC>:w<CR>
+
+inoremap jj <esc>l
+"nnoremap JJJJ <nop>
+map j gj
+map k gk
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Close the current buffer (w/o closing the current window)
+map <leader>bd :Bclose<cr>
+
+
+map <Leader><space> :nohl<CR>
+nmap <Leader>V :source $MYVIMRC<CR>
+nmap <Leader>v :vsp $MYVIMRC<CR>
+
+" Highlight trailing space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Automatic commands
 if has("autocmd")
@@ -127,7 +157,81 @@ if has("autocmd")
   nmap <Leader>d :exec "!" b:comp[2] " %"<CR>
 endif
 
-"VIM Airline
+" ====
+"  Plugins
+" ====
+
+" NERDTree
+"
+" General properties
+let NERDTreeDirArrows=1
+let NERDTreeMinimalUI=1
+let NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
+let NERDTreeWinSize = 35
+
+" Make sure that when NT root is changed, Vim's pwd is also updated
+let NERDTreeChDirMode = 2
+let NERDTreeShowLineNumbers = 1
+let NERDTreeAutoCenter = 1
+
+" Open NERDTree on startup, when no file has been specified
+autocmd VimEnter * if !argc() | NERDTree | endif
+
+" Locate file in hierarchy quickly
+map <leader>T :NERDTreeFind<cr>
+
+" Toogle on/off
+nmap <leader>o :NERDTreeToggle<cr>
+
+" ===
+" Fugitive
+" ===
+map <leader>gdi :Gdiff<cr>
+map <leader>gst :Gstatus<cr>
+map <leader>dup :diffupdate<cr>
+
+
+" ===
+" ctrl-p configuration
+" ===
+"
+"  let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"  let g:ctrlp_custom_ignore = {
+"    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"    \ 'file': '\v\.(exe|so|dll)$',
+"    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+"    \ }
+"  let g:ctrlp_custom_ignore = {
+"    \ 'file': '\v(\.cpp|\.h|\.hh|\.cxx)@<!$'
+"    \ }
+set wildignore+=*/tmp/*,*.swp,*.zip
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = '\v[\/](\.git|\.hg|\.svn|node_modules|bower_components|_build|deps)$'
+"  let g:ctrlp_user_command = [
+"      \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
+"      \ 'find %s -type f'
+"      \ ]
+
+" ===
+" Syntastic
+" ===
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+"let g:syntastic_enable_r_lintr_checker = 1
+"let g:syntastic_r_checkers = 1
+"let g:syntastic_rmd_checkers = 1
+"let g:syntastic_r_lintr_linters = "with_defaults(line_length_linter(120))"
+
+" ===
+" VIM Airline
+" === 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -147,19 +251,18 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" ===
 " bookdown
+" ===
 map <leader>bb :!./_build.sh<CR>
 map <leader>bbo :!open _book/index.html<CR>
 
+" ===
 " Elixir
+" ===
 "run tests right from vim - super helpful
-map <leader><space> :!mix test<CR>
+map <Leader>mt :!mix test<CR>
 
-" Syntactic
-let g:syntastic_enable_r_lintr_checker = 1
-let g:syntastic_r_checkers = 1
-let g:syntastic_rmd_checkers = 1
-let g:syntastic_r_lintr_linters = "with_defaults(line_length_linter(120))"
 
 " Lines added by the Vim-R-plugin command :RpluginConfig (2014-Jun-28 12:25):
 "filetype plugin on

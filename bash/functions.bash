@@ -310,3 +310,31 @@ function tre() {
 function do-dmcreate() {
   docker-machine create --driver digitalocean "$@"
 }
+
+function dockip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
+function dockrm(){
+  if [ $# -eq 0 ]; then
+    docker rm $(docker ps -aq)
+  else
+    docker rm  "$@"
+  fi
+}
+
+function dockstop(){
+  if [ $# -eq 0 ]; then
+    docker stop $(docker ps -q)
+  else
+    docker stop  "$@"
+  fi
+}
+
+function dockrmvolume(){
+  if [ $# -eq 0 ]; then
+    docker volume rm $(docker volume ls)
+  else
+    docker volume rm  "$@"
+  fi
+}
