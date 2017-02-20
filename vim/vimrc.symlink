@@ -40,8 +40,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
+" Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+Plug 'AndrewRadev/splitjoin.vim'
 
 let g:make = 'gmake'
 if exists('make')
@@ -453,6 +454,11 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+"" Quickfix
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <Leader>a :cclose<CR>
 
 "*****************************************************************************
 "" Custom configs
