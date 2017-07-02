@@ -80,3 +80,6 @@ path = ~/.gitconfig.local
 
 [push]
 	default = matching
+[user]
+	name = Jean-François Cantin
+	email = jfcantin@users.noreply.github.com
