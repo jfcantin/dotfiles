@@ -3,7 +3,7 @@
 
 " Use 14pt Menlo
 " set guifont=Menlo:h14
-set macligatures
-set guifont=Fira\ Code:h14
-" Better line-height
-set linespace=8
+"set macligatures
+"set guifont=Fira\ Code:h18
+"" Better line-height
+"set linespace=8

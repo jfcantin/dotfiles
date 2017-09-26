@@ -168,6 +168,7 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+set nowrap
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
@@ -175,39 +176,43 @@ if !exists('g:not_finish_vimplug')
 endif
 
 set mousemodel=popup
-set t_Co=256
-set guioptions=egmrti
-set gfn=Monospace\ 10
 
 if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
-  let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
-
-  
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
+    if has("gui_mac") || has("gui_macvim")
+        "set guifont=Menlo:h12
+        set guifont=Fira\ Code:h18
+        set macligatures
+        set guifont=Fira\ Code:h18
+        "set transparency=7
+        set linespace=2
     endif
-  endif
-  
+else
+    set t_Co=256
+    set guioptions=egmrti
+    set gfn=Monospace\ 10
+    let g:CSApprox_loaded = 1
+
+    " IndentLine
+    let g:indentLine_enabled = 1
+    let g:indentLine_concealcursor = 0
+    let g:indentLine_char = '┆'
+    let g:indentLine_faster = 1
+
+
+    if $COLORTERM == 'gnome-terminal'
+        set term=gnome-256color
+    else
+        if $TERM == 'xterm'
+            set term=xterm-256color
+        endif
+    endif
+
 endif
 
 
-if &term =~ '256color'
-  set t_ut=
-endif
+" if &term =~ '256color'
+"   set t_ut=
+" endif
 
 
 "" Disable the blinking cursor.
@@ -266,7 +271,7 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
+let g:NERDTreeWinSize = 25
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
@@ -362,7 +367,7 @@ nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <leader>. :lcd %:p:h<CR>
 
 "" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+"noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
@@ -375,9 +380,9 @@ let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore
 let g:ctrlp_use_caching = 1
 
 " The Silver Searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+if executable('pt')
+  set grepprg=pt\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'pt %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
 
@@ -492,7 +497,7 @@ function! s:build_go_files()
   endif
 endfunction
 
-let g:go_list_type = "quickfix"
+"let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -531,10 +536,14 @@ augroup go
   au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
   au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
-  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
   au FileType go nmap <Leader>ds <Plug>(go-def-split)
-  au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
-  au FileType go nmap <Leader>db <Plug>(go-doc-browser)
+  au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+  au FileType go nmap <Leader>gd <Plug>(go-doc)
+  au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  "au FileType go nmap <Leader>e <Plug>(go-rename)
 
   au FileType go nmap <leader>r  <Plug>(go-run)
   au FileType go nmap <leader>t  <Plug>(go-test)

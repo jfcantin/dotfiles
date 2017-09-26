@@ -21,12 +21,19 @@ path = ~/.gitconfig.local
 	go = checkout -B
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -a -v
+	br = branch -a -v
 	remotes = remote -v
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
+    # Golang contribution workflow suggested Alias - requires git-codereview
+    change = codereview change
+    gofmt = codereview gofmt
+    mail = codereview mail
+    pending = codereview pending
+    submit = codereview submit
+    sync = codereview sync
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -83,3 +90,5 @@ path = ~/.gitconfig.local
 [user]
 	name = Jean-François Cantin
 	email = jfcantin@users.noreply.github.com
+[http]
+	cookiefile = /Users/jfcantin/.gitcookies
