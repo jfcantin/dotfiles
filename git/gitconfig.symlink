@@ -1,9 +1,11 @@
 [include]
 	# for username, cred, etc
-path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
 	# View the current working tree status using the short format
 	s = status -s
 	# Show the diff between the latest commit and the current state
@@ -17,8 +19,10 @@ path = ~/.gitconfig.local
 	# Commit all changes
 	ca = !git add -A && git commit -av
 	cam = !git add -A && git commit -avm
+	# checkout
+	co = checkout
 	# Switch to a branch, creating it if necessary
-	go = checkout -B
+	go = checkout -B # throws away local changes before switching
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	br = branch -a -v
@@ -27,13 +31,14 @@ path = ~/.gitconfig.local
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
     # Golang contribution workflow suggested Alias - requires git-codereview
-    change = codereview change
-    gofmt = codereview gofmt
-    mail = codereview mail
-    pending = codereview pending
-    submit = codereview submit
-    sync = codereview sync
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -87,8 +92,5 @@ path = ~/.gitconfig.local
 
 [push]
 	default = matching
-[user]
-	name = Jean-François Cantin
-	email = jfcantin@users.noreply.github.com
 [http]
 	cookiefile = /Users/jfcantin/.gitcookies
