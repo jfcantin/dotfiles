@@ -656,3 +656,7 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+" dbext convig
+let g:dbext_default_profile_psql = 'type=PGSQL:host=localhost:port=5432:dbname=jfcantin:user=jfcantin'
+let g:dbext_default_profile_enceladus = 'type=PGSQL:host=localhost:port=5432:dbname=enceladus:user=jfcantin'
+let g:dbext_default_profile = 'psql'
