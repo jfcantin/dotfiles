@@ -7,6 +7,7 @@ filetype plugin indent on
 set shell=/bin/bash
 
 "" preferences
+set clipboard+=unnamed
 set autoindent
 set smartindent
 set number

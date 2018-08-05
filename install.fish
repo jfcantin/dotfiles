@@ -35,15 +35,24 @@ for f in bin/*
 	ln -s $PWD/$f $HOME/bin/(basename $f)
 end
 
+# git
+
 rm -f $HOME/.gitconfig
 ln -s $PWD/gitconfig $HOME/.gitconfig
 
 rm -f $HOME/.gitignore
 ln -s $PWD/gitignore $HOME/.gitignore
 
+# vim
 rm -f $HOME/.vimrc
 ln -s $PWD/vimrc $HOME/.vimrc
 
+# nvim
+mkdir -p $HOME/.config/nvim
+rm -f $HOME/.config/nvim/init.vim
+ln -s $PWD/vimrc $HOME/.config/nvim/init.vim
+
+# vscode
 if test ! -d "$HOME/Library/Application Support/Code/User"
 	mkdir -p "$HOME/Library/Application Support/Code/User"
 end
