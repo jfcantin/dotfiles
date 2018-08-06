@@ -54,5 +54,3 @@ if test -e "$HOME/Library/Application Support/Code/User/settings.json"
 end
 rm -f "$HOME/Library/Application Support/Code/User/settings.json"
 ln -s $PWD/vscode-settings.json "$HOME/Library/Application Support/Code/User/settings.json"
-
-source ~/.config/fish/config.fish

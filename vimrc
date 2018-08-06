@@ -1,3 +1,37 @@
+"
+call plug#begin()
+
+Plug 'AndrewRadev/splitjoin.vim'
+"Plug 'ConradIrwin/vim-bracketed-paste'
+"Plug 'Raimondi/delimitMate'
+"Plug 'SirVer/ultisnips'
+"Plug 'cespare/vim-toml'
+"Plug 'corylanou/vim-present', {'for' : 'present'}
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'elzr/vim-json', {'for' : 'json'}
+Plug 'fatih/vim-go', {'do' : 'GoUpdateBinaries'}
+"Plug 'fatih/vim-hclfmt'
+"Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+"Plug 'godlygeek/tabular'
+"Plug 'hashivim/vim-hashicorp-tools'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+"Plug 'junegunn/fzf.vim'
+"Plug 'mileszs/ack.vim'
+Plug 'plasticboy/vim-markdown'
+"Plug 'scrooloose/nerdtree'
+"Plug 't9md/vim-choosewin'
+"Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
+Plug 'fatih/molokai'
+"Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-scriptease'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+call plug#end()
+
 " minimal example from https://github.com/tpope/vim-pathogen
 set nocompatible
 syntax on
