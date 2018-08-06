@@ -21,13 +21,6 @@ for f in fish_env/*
 	ln -s $PWD/$f $HOME/.config/fish/env/(basename $f)
 end
 
-mkdir -p $HOME/.config/fish/alias
-
-for f in fish_alias/*
-	rm -f $HOME/.config/fish/alias/(basename $f)
-	ln -s $PWD/$f $HOME/.config/fish/alias/(basename $f)
-end
-
 mkdir -p $HOME/bin
 
 for f in bin/*
