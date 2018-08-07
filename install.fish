@@ -54,3 +54,7 @@ if test -e "$HOME/Library/Application Support/Code/User/settings.json"
 end
 rm -f "$HOME/Library/Application Support/Code/User/settings.json"
 ln -s $PWD/vscode-settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
+# set keyrepeat for osx
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# defaults delete -g ApplePressAndHoldEnabled # reset if necessary
