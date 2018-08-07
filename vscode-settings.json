@@ -16,7 +16,7 @@
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": false,
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
     "files.autoSave": "afterDelay",
