@@ -32,6 +32,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	editor = nvim
 
 [color]
 	# Use colors in Git commands that are capable of colored output when

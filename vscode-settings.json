@@ -15,7 +15,7 @@
     "go.lintTool": "golint",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true,
     "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
