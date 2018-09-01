@@ -9,7 +9,7 @@
 	s = status -s
 	ca = !git add -A && git commit -av
 	cam = !git add -A && git commit -avm
-	go = checkout -B
+	co = checkout -b
 	branches = branch -a -v
 	remotes = remote -v
 	tags = tag -l
@@ -18,10 +18,9 @@
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-	plog = log --graph --pretty=format:'%Cred%h%Creset █ %Cblue[%an]%Creset █ %Cred(%cr)%Creset █ %s █ %Cgreen%d%Creset'
+	pl = log --graph --pretty=format:'%Cred%h%Creset █ %Cblue[%an]%Creset █ %Cred(%cr)%Creset █ %s █ %Cgreen%d%Creset'
 	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	pl = "!git plog -25 | column -s'█' -t 2>/dev/null | less -r"
 
 [apply]
 	# Detect whitespace errors when applying a patch
