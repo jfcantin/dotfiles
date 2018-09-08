@@ -62,3 +62,7 @@ ln -s $PWD/psqlrc $HOME/.psqlrc
 # set keyrepeat for osx
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # defaults delete -g ApplePressAndHoldEnabled # reset if necessary
+
+# Set screenshot folder
+mkdir -p "$HOME/Pictures/Screenshots/"
+defaults write com.apple.screencapture location ~/Pictures/Screenshots/
