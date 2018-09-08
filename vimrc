@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 "Plug 'tpope/vim-scriptease'
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/dbext.vim'
 
 call plug#end()
 
@@ -53,8 +54,44 @@ set backspace=indent,eol,start
 set linebreak
 set nojoinspaces
 
+"" Map leader to ,
+let mapleader=','
+
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " ctrl-backspace should delete words
 imap <C-bs> <C-w>
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+"" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+"" Open current line on GitHub
+nnoremap <Leader>o :.Gbrowse<CR>
+
+"" Quickfix
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <Leader>a :cclose<CR>
+
+" dbext
+let g:dbext_default_profile_psql = 'type=PGSQL:host=localhost:port=5432:dbname=jfcantin:user=jfcantin'
+let g:dbext_default_profile_enceladus = 'type=PGSQL:host=localhost:port=5432:dbname=enceladus:user=jfcantin'
+let g:dbext_default_profile_asucore = 'type=PGSQL:host=localhost:port=5432:dbname=asucore:user=jfcantin'

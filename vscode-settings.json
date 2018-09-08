@@ -24,6 +24,14 @@
     "files.autoSaveDelay": 10000,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "left",
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.preloadModules": [
+        "os",
+        "sys",
+        "panda",
+        "numpy",
+        "psycopg2"
+    ]
 }
 

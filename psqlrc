@@ -1,7 +1,6 @@
 \pset null '(NULL)'
 \setenv EDITOR nvim
 \set HISTFILE ~/.psql_history- :HOST - :DBNAME
-\set HISTFILE 2000
 \timing
 \set PROMPT1 '(%n@%M:%>) [%/] > '
 \set PROMPT2 ''
