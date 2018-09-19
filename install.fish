@@ -67,6 +67,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 mkdir -p "$HOME/Pictures/Screenshots/"
 defaults write com.apple.screencapture location ~/Pictures/Screenshots/
 
-# Zotero setup
+# Zotero setup not needed anymore 
+# Use zotfile plugin instead with base dir in zotero
 # rm -Rf $HOME/Zotero/storage
 # ln -s ~/Dropbox/apps/zotero/storage ~/Zotero/
