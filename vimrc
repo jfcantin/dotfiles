@@ -95,3 +95,4 @@ nnoremap <Leader>a :cclose<CR>
 let g:dbext_default_profile_psql = 'type=PGSQL:host=localhost:port=5432:dbname=jfcantin:user=jfcantin'
 let g:dbext_default_profile_enceladus = 'type=PGSQL:host=localhost:port=5432:dbname=enceladus:user=jfcantin'
 let g:dbext_default_profile_asucore = 'type=PGSQL:host=localhost:port=5432:dbname=asucore:user=jfcantin'
+let g:dbext_default_profile = 'psql'
