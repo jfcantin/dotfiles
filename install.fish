@@ -55,16 +55,18 @@ end
 rm -f "$HOME/Library/Application Support/Code/User/settings.json"
 ln -s $PWD/vscode-settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
-#psql
+# psql
 rm -f $HOME/.psqlrc
 ln -s $PWD/psqlrc $HOME/.psqlrc
 
 # R
+mkdir -p $HOME/Library/R
 rm -f $HOME/.Renviron
 ln -s $PWD/Renviron $HOME/.Renviron
 
 # set keyrepeat for osx
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write -g ApplePressAndHoldEnabled -bool false
+# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # defaults delete -g ApplePressAndHoldEnabled # reset if necessary
 
 # Set screenshot folder
