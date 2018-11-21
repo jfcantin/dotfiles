@@ -64,15 +64,6 @@ mkdir -p $HOME/Library/R
 rm -f $HOME/.Renviron
 ln -s $PWD/Renviron $HOME/.Renviron
 
-# set keyrepeat for osx
-defaults write -g ApplePressAndHoldEnabled -bool false
-# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-# defaults delete -g ApplePressAndHoldEnabled # reset if necessary
-
-# Set screenshot folder
-mkdir -p "$HOME/Pictures/Screenshots/"
-defaults write com.apple.screencapture location ~/Pictures/Screenshots/
-
 # Zotero setup not needed anymore 
 # Use zotfile plugin instead with base dir in zotero
 # rm -Rf $HOME/Zotero/storage
