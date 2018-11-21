@@ -9,7 +9,7 @@
 	s = status -s
 	ca = !git add -A && git commit -av
 	cam = !git add -A && git commit -avm
-	co = checkout -b
+	co = checkout
 	branches = branch -a -v
 	remotes = remote -v
 	tags = tag -l

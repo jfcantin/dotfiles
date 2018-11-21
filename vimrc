@@ -53,12 +53,19 @@ set ruler
 set backspace=indent,eol,start
 set linebreak
 set nojoinspaces
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
+hi clear SpellCap
+hi SpellCap cterm=underline ctermfg=red
+" SpellBad       xxx ctermbg=9 gui=undercurl guisp=Red
+" SpellCap       xxx ctermbg=12 gui=undercurl guisp=Blue
 
 "" Map leader to ,
 let mapleader=','
 
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufRead *.md setlocal spell
 
 " ctrl-backspace should delete words
 imap <C-bs> <C-w>
@@ -74,6 +81,12 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+
+"" movement
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -94,3 +107,6 @@ nnoremap <Leader>a :cclose<CR>
 " dbext
 source ~/.config/vimextra/dbextconfig.vim
 let g:dbext_default_buffer_lines = 20 
+
+" ctrl-p
+let g:ctrlp_open_new_file = 'r'
