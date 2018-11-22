@@ -2,7 +2,6 @@
 
 # require xcode-select --install
 # once completed will need to do 
-# sudo chsh -s /usr/local/bin/fish username
 
 brew update
 brew upgrade
@@ -11,25 +10,6 @@ brew tap homebrew/cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 brew tap homebrew/services
-
-#brew install openssl
-brew install git
-brew install fish
-brew install autojump
-brew install neovim
-brew install rsync
-brew install tree
-
-brew install pandoc
-brew install the_platinum_searcher
-
-brew install node
-brew install yarn
-brew install postgresql
-brew install sqlite
-brew install go
-brew install hugo
-brew install doctl
 
 # Casks installation
 brew cask install google-chrome
