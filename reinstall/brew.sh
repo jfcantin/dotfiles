@@ -15,6 +15,7 @@ brew tap homebrew/services
 #brew install openssl
 brew install git
 brew install fish
+brew install autojump
 brew install neovim
 brew install rsync
 brew install tree
