@@ -21,7 +21,7 @@ for f in shell/fish_env/*
 	ln -s $PWD/$f $HOME/.config/fish/env/(basename $f)
 end
 
-mkdir -p $HOME/bin
+mkdir -p $HOME/go/bin
 
 for f in shell/bin/*
 	rm -f $HOME/bin/(basename $f)
@@ -29,7 +29,6 @@ for f in shell/bin/*
 end
 
 # git
-
 rm -f $HOME/.gitconfig
 ln -s $PWD/settings/gitconfig $HOME/.gitconfig
 
