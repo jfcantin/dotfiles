@@ -16,7 +16,7 @@
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": true,
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Solarized Dark",
     //"workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
@@ -24,7 +24,7 @@
     "files.autoSaveDelay": 10000,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "workbench.sideBar.location": "left",
+    "workbench.sideBar.location": "right",
     "python.autoComplete.addBrackets": true,
     "python.autoComplete.preloadModules": [
         "os",
