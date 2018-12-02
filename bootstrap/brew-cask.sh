@@ -9,6 +9,7 @@ brew upgrade
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-drivers
 brew tap homebrew/services
 
 # Casks installation
@@ -34,5 +35,6 @@ brew cask install basictex
 
 brew cask install zotero
 brew cask install superduper
+brew cask install garmin-express
 
 brew services start postgresql
