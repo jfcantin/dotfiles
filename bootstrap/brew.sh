@@ -19,6 +19,7 @@ brew install tree
 brew install pandoc
 brew install the_platinum_searcher
 
+brew install python
 brew install node
 brew install yarn
 brew install postgresql
@@ -26,3 +27,5 @@ brew install sqlite
 brew install go
 brew install hugo
 brew install doctl
+
+pip3 install neovim

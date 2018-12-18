@@ -9,7 +9,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 "Plug 'corylanou/vim-present', {'for' : 'present'}
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'elzr/vim-json', {'for' : 'json'}
-Plug 'fatih/vim-go', {'do' : 'GoInstallBinaries'}
+Plug 'fatih/vim-go', {'do' : ':GoInstallBinaries'}
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 "Plug 'fatih/vim-hclfmt'
 "Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 "Plug 'godlygeek/tabular'
@@ -144,6 +145,9 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " go
 " vim-go
