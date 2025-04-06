@@ -2,7 +2,7 @@
 	default = matching
 
 [alias]
-	s = status -s
+	st = status --short --branch
 	ca = !git add -A && git commit -av
 	cam = !git add -A && git commit -avm
 	co = checkout
@@ -15,8 +15,11 @@
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	pl = log --graph --pretty=format:'%Cred%h%Creset █ %Cblue[%an]%Creset █ %Cred(%cr)%Creset █ %s █ %Cgreen%d%Creset'
-	lol  = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lg = log --pretty=format:'%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset ' --graph
+	lgl = log --pretty=format:'%Cred%h%Creset |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph
+	dp = diff --word-diff --unified=10
+	new = lg main..HEAD
+	missing = lg HEAD..main
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -26,8 +29,11 @@
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	whitespace = blank-at-eol,blank-at-eof,tab-in-indent
 	editor = nvim
+	fsmonitor = true
+	autocrlf = input
+	pager = delta
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -49,6 +55,7 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	conflictstyle = diff3
 
 # URL shorthands
 #[url "ssh://git@github.com/"]
@@ -65,3 +72,12 @@
 
 [include]
 	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+[rebase]
+	autosquash = true
+	autoStash = true
+[rerere]
+	enabled = true
