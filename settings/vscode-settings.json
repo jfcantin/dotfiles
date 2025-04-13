@@ -94,5 +94,6 @@
 
   // SQL Tools settings
   "sqltools.useNodeRuntime": true,
-  "liveServer.settings.donotShowInfoMsg": true
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDelete": false
 }

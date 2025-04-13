@@ -49,13 +49,3 @@ echo "Installation Complete! run post oh-my-zsh install"
 echo "installing oh-my-zsh..."
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# list of files/folders to symlink in ${ZSH_CUSTOM}
-zsh_files=(zextra.zsh zaliases.zsh zprivate.zsh)
-
-for file in "${zsh_files[@]}"; do
-    echo "Creating symlink to $file in ${ZSH_CUSTOM}"
-    ln -sf "${dotfiledir}/${file}" "${ZSH_CUSTOM}/${file}"
-done
-
-omz reload
