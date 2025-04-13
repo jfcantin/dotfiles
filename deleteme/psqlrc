@@ -1,8 +1,0 @@
-\pset null '(NULL)'
-\setenv EDITOR nvim
-\set HISTFILE ~/.psql_history-:DBNAME
-\timing
-\set PROMPT1 '(%n@%M:%>) [%/] > '
-\set PROMPT2 ''
-\pset linestyle unicode
-\pset border 2
