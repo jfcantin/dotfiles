@@ -44,6 +44,8 @@ echo "setup zprivate.zsh in dotfiles folder for oh-my-zsh"
 echo "Press enter to continue..."
 read
 
+echo "Installation Complete! run post oh-my-zsh install"
+
 echo "installing oh-my-zsh..."
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -57,5 +59,3 @@ for file in "${zsh_files[@]}"; do
 done
 
 omz reload
-
-echo "Installation Complete!"
