@@ -83,7 +83,7 @@ fi
 
 # Define an array of applications to install using Homebrew Cask.
 apps=(
-    "iterm2"
+    #"iterm2"
     "google-chrome"
     "firefox"
     "brave-browser"
