@@ -75,4 +75,5 @@ lint.ignore = [
     "FBT003", # Flake8-boolean-trap - boolean position value in function call
     "D203",  # Pydocstyle - one blank line required before class docstring
     "D212",  # Pydocstyle - summary line should be immediately after the opening quotes.
+    "COM812",
 ]
